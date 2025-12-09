@@ -42,7 +42,8 @@ System.out.println(sb);  // Output: HelloWorld
 | When to Use   | Fixed text             | Multi-threaded modifications    | Single-threaded modifications |
 
 Note - 
-Specifically, "two or more threads cannot call the methods of StringBuffer simultaneously" implies that only one thread can execute a synchronized method of a StringBuffer instance at any given time.
+Specifically, "two or more threads cannot call the methods of StringBuffer simultaneously" implies that only one thread can execute a synchronized method of a StringBuffer instance at any given time. When one thread enters a synchronized method (like append(), insert(), delete(), etc.) of a StringBuffer object, a lock is acquired on that object. Any other thread attempting to call a synchronized method on the same StringBuffer object will be blocked and forced to wait until the first thread releases the lock.
+
 ⭐ Super-short interview answer (20 seconds)
 
 String is immutable. StringBuffer and StringBuilder are mutable.
